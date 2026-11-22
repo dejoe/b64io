@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>Base64 Converter</h1>
+      <h1>Base64 IO</h1>
       <p>Encode and decode text and images to Base64 format</p>
     </header>
 
@@ -35,7 +35,10 @@
             <label for="output-encode-text">Base64 Result</label>
             <div class="output-with-copy">
               <textarea id="output-encode-text" readonly placeholder="Encoded output will appear here..."></textarea>
+            </div>
+            <div class="output-actions">
               <button class="btn-copy" data-target="output-encode-text">Copy</button>
+              <button class="btn-test" data-panel="encode-text">Test Decode</button>
             </div>
           </div>
         </section>
@@ -52,7 +55,10 @@
             <label for="output-decode-text">Decoded Text</label>
             <div class="output-with-copy">
               <textarea id="output-decode-text" readonly placeholder="Decoded output will appear here..."></textarea>
+            </div>
+            <div class="output-actions">
               <button class="btn-copy" data-target="output-decode-text">Copy</button>
+              <button class="btn-test" data-panel="decode-text">Test Encode</button>
             </div>
           </div>
         </section>
@@ -68,7 +74,10 @@
             <label for="output-encode-image">Base64 Data URL</label>
             <div class="output-with-copy">
               <textarea id="output-encode-image" readonly placeholder="Encoded image data URL will appear here..."></textarea>
+            </div>
+            <div class="output-actions">
               <button class="btn-copy" data-target="output-encode-image">Copy</button>
+              <button class="btn-test" data-panel="encode-image">Test Decode Image</button>
             </div>
             <div class="image-preview">
               <img id="preview-encode-image" alt="Image preview">
@@ -87,6 +96,9 @@
           <div class="output-section">
             <div class="image-preview">
               <img id="preview-decode-image" alt="Decoded image preview">
+            </div>
+            <div class="output-actions">
+              <button class="btn-test" data-panel="decode-image">Test Encode Image</button>
             </div>
             <button id="btn-download-image" class="btn-secondary">Download Image</button>
           </div>

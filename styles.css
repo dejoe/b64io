@@ -258,7 +258,6 @@ footer {
   margin-bottom: 2rem;
   border-bottom: 1px solid var(--color-border);
   overflow-x: auto;
-  padding-bottom: 0.5rem;
 }
 
 .tab-btn {
@@ -272,6 +271,7 @@ footer {
   cursor: pointer;
   transition: var(--transition);
   white-space: nowrap;
+  border-radius: 0;
 }
 
 .tab-btn:hover {
@@ -280,7 +280,14 @@ footer {
 
 .tab-btn.active {
   color: var(--color-accent);
+  font-weight: 700;
   border-bottom-color: var(--color-accent);
+  background: transparent;
+  box-shadow: none;
+}
+
+.tab-btn.active:hover {
+  transform: none;
 }
 
 /* Tab panels */
@@ -312,6 +319,30 @@ footer {
 .output-with-copy textarea {
   flex: 1;
   min-height: 100px;
+}
+
+/* Output action buttons (Copy / Test) */
+.output-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.btn-test {
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-test:hover {
+  background: #475569;
+  border-color: var(--color-accent);
 }
 
 .btn-copy {
