@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 Converter</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Base64 Converter</h1>
+      <p>Encode and decode text and images to Base64 format</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="encode-text">Encode Text</button>
+      <button class="tab-btn" data-tab="decode-text">Decode Text</button>
+      <button class="tab-btn" data-tab="encode-image">Encode Image</button>
+      <button class="tab-btn" data-tab="decode-image">Decode Image</button>
+    </nav>
+
+    <div class="card">
+      <div class="tab-panels">
+
+        <!-- Encode Text -->
+        <section class="tab-panel active" id="panel-encode-text">
+          <div class="form-group">
+            <label for="input-encode-text">Plain Text</label>
+            <textarea id="input-encode-text" placeholder="Type text to encode..."></textarea>
+          </div>
+          <button id="btn-encode-text" class="btn-primary">Encode to Base64</button>
+          <div id="error-encode-text" class="error-message"></div>
+          <div class="output-section">
+            <label for="output-encode-text">Base64 Result</label>
+            <div class="output-with-copy">
+              <textarea id="output-encode-text" readonly placeholder="Encoded output will appear here..."></textarea>
+              <button class="btn-copy" data-target="output-encode-text">Copy</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Decode Text -->
+        <section class="tab-panel" id="panel-decode-text">
+          <div class="form-group">
+            <label for="input-decode-text">Base64 String</label>
+            <textarea id="input-decode-text" placeholder="Paste Base64 to decode..."></textarea>
+          </div>
+          <button id="btn-decode-text" class="btn-primary">Decode from Base64</button>
+          <div id="error-decode-text" class="error-message"></div>
+          <div class="output-section">
+            <label for="output-decode-text">Decoded Text</label>
+            <div class="output-with-copy">
+              <textarea id="output-decode-text" readonly placeholder="Decoded output will appear here..."></textarea>
+              <button class="btn-copy" data-target="output-decode-text">Copy</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Encode Image -->
+        <section class="tab-panel" id="panel-encode-image">
+          <div class="form-group">
+            <label for="file-encode-image">Select Image File</label>
+            <input type="file" id="file-encode-image" accept="image/*">
+          </div>
+          <div id="error-encode-image" class="error-message"></div>
+          <div class="output-section">
+            <label for="output-encode-image">Base64 Data URL</label>
+            <div class="output-with-copy">
+              <textarea id="output-encode-image" readonly placeholder="Encoded image data URL will appear here..."></textarea>
+              <button class="btn-copy" data-target="output-encode-image">Copy</button>
+            </div>
+            <div class="image-preview">
+              <img id="preview-encode-image" alt="Image preview">
+            </div>
+          </div>
+        </section>
+
+        <!-- Decode Image -->
+        <section class="tab-panel" id="panel-decode-image">
+          <div class="form-group">
+            <label for="input-decode-image">Base64 Data URL</label>
+            <textarea id="input-decode-image" placeholder="Paste Base64 data URL (data:image/...;base64,...)"></textarea>
+          </div>
+          <button id="btn-decode-image" class="btn-primary">Decode Image</button>
+          <div id="error-decode-image" class="error-message"></div>
+          <div class="output-section">
+            <div class="image-preview">
+              <img id="preview-decode-image" alt="Decoded image preview">
+            </div>
+            <button id="btn-download-image" class="btn-secondary">Download Image</button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 Base64 Converter. Built with modern web standards.
+    </footer>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
